@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-slate-950: #000000;
+  --color-slate-900: #0a0a0a;
+  --color-slate-800: #121212;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+}
+
+:root {
+  --background: #000000;
+  --foreground: #f0f0f8;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Disable body scroll when menu is open */
+body:has(nav.open) {
+  overflow: hidden;
+}
