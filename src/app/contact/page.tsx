@@ -40,7 +40,7 @@ export default function Contact() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">Connect</span>
+          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">Get In Touch</span>
         </motion.h1>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function Contact() {
           transition={{ delay: 0.1 }}
           className="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto"
         >
-          Have a project in mind? We'd love to hear about it. Reach out and let's start building together.
+          Tell us about your project and we'll get back to you within 24 hours.
         </motion.p>
       </section>
 
@@ -76,7 +76,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-500 mb-1">Email</h4>
-                  <p className="text-lg font-medium text-slate-100">hello@kapishtech.com</p>
+                  <p className="text-lg font-medium text-slate-100">office.kapishtech@gmail.com</p>
                 </div>
               </div>
               
@@ -86,7 +86,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-500 mb-1">Phone</h4>
-                  <p className="text-lg font-medium text-slate-100">+91 98765 43210</p>
+                  <p className="text-lg font-medium text-slate-100">+91 90983 09221</p>
                 </div>
               </div>
               
@@ -103,7 +103,7 @@ export default function Contact() {
 
             <div className="pt-6">
               <a 
-                href="https://wa.me/919876543210?text=Hi%20Kapish%20Technologies!%20I%27m%20interested%20in%20your%20services." 
+                href="https://wa.me/919098309221?text=Hi%20Kapish%20Technologies!%20I%27m%20interested%20in%20your%20services." 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 bg-[#25d366] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#20bd5a] transition-colors shadow-lg shadow-[#25d366]/20"
