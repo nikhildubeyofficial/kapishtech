@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
+
 @theme {
   --color-slate-950: #000000;
   --color-slate-900: #0a0a0a;
@@ -13,22 +17,140 @@
   }
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 118, 26, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(232, 118, 26, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 118, 26, 0);
+  }
+}
+
 :root {
-  --background: #000000;
-  --foreground: #f0f0f8;
+  --primary-navy: #0A2540;
+  --deep-blue: #1E3A8A;
+  --kapish-saffron: #B85C20;
+  --warm-orange: #E8761A;
+  --orange-hover: #D4621A;
+  --background: #F8FAFC;
+  --section-alt: #F1F5F9;
+  --card-bg: #FFFFFF;
+  --border: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-sora {
+  font-family: var(--font-sora), sans-serif;
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  background: rgba(30, 58, 138, 0.22);
+  color: #0f172a;
 }
 
-/* Disable body scroll when menu is open */
-body:has(nav.open) {
-  overflow: hidden;
+.site-shell {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.section-pad {
+  padding: 80px 0;
+}
+
+.btn-orange {
+  background: #e8761a;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-orange:hover {
+  background: #d4621a;
+  transform: translateY(-1px);
+}
+
+.pulse-dot {
+  animation: pulse 1.8s infinite;
+}
+
+.kapish-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.kapish-card:hover {
+  transform: translateY(-3px);
+  border-color: #1e3a8a;
+  box-shadow: 0 8px 30px rgba(10, 37, 64, 0.1);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10, 37, 64, 0.12);
+}
+
+img {
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .site-shell {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .hero-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .site-shell {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-pad {
+    padding: 48px 0;
+  }
+
+  .services-grid,
+  .why-grid,
+  .process-grid,
+  .portfolio-grid,
+  .testimonials-grid,
+  .team-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }

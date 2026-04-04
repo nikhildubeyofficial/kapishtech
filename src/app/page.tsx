@@ -1,277 +1,373 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Code, Smartphone, Palette, Zap, Target, Sparkles, Headset, Quote } from "lucide-react";
+import {
+  ArrowRight,
+  Code2,
+  Smartphone,
+  Brain,
+  PenTool,
+  Briefcase,
+  Boxes,
+  CloudCog,
+  CheckCircle2,
+} from "lucide-react";
+
+const services = [
+  { icon: Code2, title: "Web Development", description: "React, Next.js, and Node.js products built for speed and scale." },
+  { icon: Smartphone, title: "Mobile Apps", description: "Flutter and React Native apps with smooth, reliable user journeys." },
+  { icon: Brain, title: "AI/ML Solutions", description: "Automation and model-driven workflows that unlock smarter operations." },
+  { icon: PenTool, title: "UI/UX Design", description: "Research-led product design focused on clarity, trust, and conversion." },
+  { icon: Briefcase, title: "IT Consulting", description: "Technology strategy and digital transformation guidance for growth." },
+  { icon: Boxes, title: "Custom Software", description: "Tailored business platforms designed around your exact workflows." },
+  { icon: CloudCog, title: "Cloud & DevOps", description: "AWS, CI/CD, and deployment automation for resilient delivery." },
+];
+
+const processSteps = [
+  ["1", "Discovery", "Business goals and scope alignment."],
+  ["2", "Design", "UX flows and visual prototypes."],
+  ["3", "Development", "Scalable product engineering."],
+  ["4", "Testing", "QA and performance validation."],
+  ["5", "Launch", "Go-live, monitor, and optimize."],
+];
 
 export default function Home() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  };
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
   return (
-    <div className="overflow-hidden">
-      {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 pb-32">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[150px]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/10 rounded-full blur-[100px] opacity-50" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_30%,transparent_100%)]" />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            className="text-center max-w-5xl mx-auto"
-            initial="initial"
-            animate="animate"
-            variants={stagger}
-          >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-indigo-300 text-sm font-medium mb-8">
-              <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse" />
-              Design. Develop. Deliver.
-            </motion.div>
-            
-            <motion.h1 variants={fadeInUp} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-              Building Digital Products <br />
-              That Drive <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-sky-400">Real Business Growth</span>
-            </motion.h1>
-            
-            <motion.p variants={fadeInUp} className="text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-              We design and develop high-performance websites and applications that help startups and businesses grow faster, smarter, and stronger in the digital world.
-            </motion.p>
-            
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-medium px-8 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(79,70,229,0.3)] hover:shadow-[0_0_30px_rgba(79,70,229,0.5)] transform hover:-translate-y-1">
-                Get Started <ArrowRight className="w-5 h-5" />
+    <div>
+      <section id="home" className="relative overflow-hidden bg-[linear-gradient(135deg,#0A2540_0%,#1E3A8A_100%)] section-pad text-white">
+        <div className="absolute -right-24 -top-24 h-[500px] w-[500px] rounded-full bg-[rgba(232,118,26,0.06)]" />
+        <div className="site-shell hero-grid grid grid-cols-2 items-center gap-12">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-[12px] font-semibold uppercase tracking-[0.6px] text-white/90">
+              <span className="pulse-dot h-2.5 w-2.5 rounded-full bg-[#E8761A]" />
+              Trusted Digital Partner
+            </div>
+            <h1 className="font-sora text-[48px] font-bold leading-[1.15] tracking-[-0.5px] text-white max-md:text-[32px]">
+              Built on <span className="text-white">Values.</span>
+              <br />
+              Powered by Technology
+            </h1>
+            <p className="mt-5 max-w-[480px] text-[17px] leading-[1.7] text-[rgba(255,255,255,0.7)]">
+              We design, build, and scale digital products that help businesses grow from ambitious startups to established enterprises.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3 max-[480px]:flex-col">
+              <Link href="/#contact" className="btn-orange inline-flex items-center gap-2 rounded-[8px] px-5 py-3 text-sm font-semibold text-white max-[480px]:w-full max-[480px]:justify-center">
+                Start Your Project <ArrowRight size={16} />
               </Link>
-              <Link href="/portfolio" className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium px-8 py-4 rounded-xl transition-all backdrop-blur-sm hover:-translate-y-1">
+              <Link
+                href="/#portfolio"
+                className="inline-flex items-center rounded-[8px] border-[1.5px] border-[rgba(255,255,255,0.4)] px-5 py-3 text-sm font-semibold text-white transition-all duration-200 hover:border-white max-[480px]:w-full max-[480px]:justify-center"
+              >
                 View Our Work
               </Link>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 4. ABOUT SECTION (Moved slightly up for flow) */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-12 md:p-20 rounded-[40px] bg-[#0a0a0a] border border-white/5 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 items-center">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">Who We <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-indigo-400">Are</span></h2>
-                <div className="text-slate-400 text-lg leading-relaxed space-y-6">
-                  <p>Kapish Technologies is a growing tech startup focused on building modern digital solutions for businesses.</p>
-                  <p>We combine creativity, technology, and strategy to deliver products that not only look great but also perform exceptionally.</p>
-                  <p className="font-semibold text-indigo-300">Our mission is to help businesses establish a strong digital presence and scale with confidence.</p>
-                </div>
-              </div>
-              <div className="aspect-square rounded-[40px] border border-white/10 bg-black/50 backdrop-blur-xl flex items-center justify-center relative shadow-[0_20px_50px_rgba(79,70,229,0.15)]">
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-purple-500 text-8xl font-extrabold opacity-80">KT</span>
-              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* 2. SERVICES SECTION */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What We <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Do</span></h2>
-            <p className="text-slate-400 text-xl">We deliver modern digital solutions tailored to your business needs.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Code, title: "Website Development", desc: "We build fast, responsive, and visually stunning websites that convert visitors into customers." },
-              { icon: Smartphone, title: "App Development", desc: "From idea to launch, we create scalable and user-friendly mobile and web applications." },
-              { icon: Palette, title: "UI/UX Design", desc: "We design intuitive and engaging user experiences that keep users coming back." }
-            ].map((service, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group p-10 rounded-[40px] bg-[#0a0a0a] border border-white/5 hover:border-indigo-500/30 transition-all hover:-translate-y-2 shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-              >
-                <div className="w-16 h-16 rounded-[24px] bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-8 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-white transition-all">
-                  <service.icon className="w-8 h-8" />
+          <div className="rounded-2xl border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.06)] p-5">
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                ["50+", "Projects"],
+                ["30+", "Clients"],
+                ["7+", "Services"],
+                ["99%", "Satisfaction"],
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-xl border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.05)] p-3">
+                  <span className="font-sora block text-[26px] font-bold text-[#E8761A] leading-none">{value}</span>
+                  <span className="mt-1 block text-sm text-white/85">{label}</span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-slate-400 leading-relaxed text-lg">{service.desc}</p>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {["React", "Node.js", "AI/ML", "Flutter", "AWS", "UI/UX"].map((tag) => (
+                <span key={tag} className="rounded-full border border-[rgba(255,255,255,0.25)] bg-[rgba(255,255,255,0.08)] px-3 py-1 text-xs text-white/80">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 3. WHY CHOOSE US */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#0a0a0a] -z-10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-purple-600/10 rounded-[100%] blur-[120px] pointer-events-none" />
-
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Why <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-sky-400">Kapish Technologies?</span></h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {[
-              { icon: Zap, title: "Fast & Reliable Delivery" },
-              { icon: Target, title: "Business-Focused Solutions" },
-              { icon: Sparkles, title: "Creative & Modern Designs" },
-              { icon: Headset, title: "Dedicated Support" }
-            ].map((feature, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="flex items-center gap-8 p-8 rounded-[40px] bg-black border border-white/5 hover:bg-white/[0.02] transition-colors shadow-2xl"
-              >
-                <div className="w-16 h-16 shrink-0 rounded-3xl bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                  <feature.icon className="w-8 h-8" />
-                </div>
-                <h4 className="text-2xl font-bold text-white">{feature.title}</h4>
-              </motion.div>
-            ))}
+      <section className="border-b border-[#E2E8F0] bg-white py-5">
+        <div className="site-shell flex items-center gap-6 max-[480px]:overflow-x-auto max-[480px]:whitespace-nowrap">
+          <span className="text-[12px] uppercase tracking-[0.5px] text-[#94A3B8]">Trusted by</span>
+          <div className="flex items-center gap-6 font-sora text-[14px] font-semibold text-[#CBD5E1]">
+            <span>TechCorp</span>
+            <span>BuildNation</span>
+            <span>FinEdge</span>
+            <span>NovaSoft</span>
+            <span>GrowthLab</span>
           </div>
         </div>
       </section>
 
-      {/* 5. PORTFOLIO SECTION */}
-      <section className="py-32 relative">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-indigo-400">Work</span></h2>
-            <p className="text-slate-400 text-xl">A glimpse of the projects we’ve crafted with precision and creativity.</p>
+      <section id="about" className="section-pad bg-white">
+        <div className="site-shell about-grid grid grid-cols-2 items-center gap-16">
+          <div className="relative h-[360px] overflow-hidden rounded-[20px] border border-[#E2E8F0] bg-[linear-gradient(135deg,#EFF6FF,#DBEAFE)]">
+            <div className="absolute left-6 top-6 grid h-[68px] w-[68px] grid-cols-2 gap-1.5 rounded-xl bg-white/70 p-2">
+              <span className="rounded bg-[#0A2540]" />
+              <span className="rounded bg-[#1E3A8A]" />
+              <span className="rounded bg-[#1E3A8A]" />
+              <span className="rounded bg-[#0A2540]" />
+            </div>
+            <div className="absolute bottom-6 right-6 h-24 w-24 bg-[radial-gradient(#93C5FD_1.5px,transparent_1.5px)] [background-size:12px_12px]" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              { title: "FinVault Dashboard", cat: "Web App", color: "from-blue-600/20 to-indigo-600/20" },
-              { title: "ShopFlow Mobile", cat: "iOS & Android", color: "from-purple-600/20 to-pink-600/20" },
-              { title: "DataPulse Analytics", cat: "UI/UX Design", color: "from-emerald-600/20 to-teal-600/20" }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative rounded-[40px] overflow-hidden border border-white/10 bg-[#0a0a0a] cursor-pointer shadow-[0_10px_40px_rgba(0,0,0,0.5)]"
-              >
-                <div className={`aspect-[4/3] bg-gradient-to-br ${item.color} flex items-center justify-center relative`}>
-                  <div className="w-32 h-32 rounded-full border-4 border-white/10 border-t-white/30 animate-spin-slow" />
-                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                    <span className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white transform scale-50 group-hover:scale-100 transition-transform duration-300">
-                      <ArrowRight className="w-8 h-8 -rotate-45" />
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <span className="text-sm font-bold uppercase tracking-wider text-indigo-400 mb-3 block">{item.cat}</span>
-                  <h3 className="text-2xl font-bold group-hover:text-indigo-300 transition-colors">{item.title}</h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="mt-16 text-center">
-            <Link href="/portfolio" className="inline-flex items-center gap-3 text-indigo-400 font-bold hover:text-indigo-300 transition-colors text-lg">
-              View All Projects <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. TESTIMONIALS */}
-      <section className="py-24 relative overflow-hidden bg-[#0a0a0a]">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">What Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">Clients Say</span></h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {[
-              { 
-                text: "Kapish Technologies transformed our online presence with a stunning website.",
-                author: "Sarah Jenkins", role: "Startup Founder" 
-              },
-              { 
-                text: "Professional, fast, and highly creative team. Highly recommended!",
-                author: "Mark Torres", role: "Marketing Director" 
-              }
-            ].map((testimonial, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="p-10 md:p-12 rounded-[40px] bg-black border border-white/5 relative shadow-2xl group hover:-translate-y-2 transition-transform"
-              >
-                <Quote className="absolute top-8 right-10 w-16 h-16 text-white/[0.03] group-hover:text-indigo-500/10 transition-colors" />
-                <p className="text-xl md:text-2xl font-medium text-slate-300 leading-relaxed mb-8 relative z-10 italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center gap-4 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center font-bold text-lg">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-white">{testimonial.author}</h4>
-                    <span className="text-slate-400 text-sm">{testimonial.role}</span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7. CALL TO ACTION */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-16 md:p-24 rounded-[40px] bg-gradient-to-br from-indigo-900/40 to-purple-900/40 border border-white/10 text-center relative overflow-hidden backdrop-blur-sm shadow-[0_20px_50px_rgba(79,70,229,0.15)]"
-          >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,70,229,0.15)_0%,transparent_70%)]" />
-            
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 relative z-10">
-              Let’s Build Something <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-sky-400">Amazing Together</span>
-            </h2>
-            <p className="text-slate-300 text-xl md:text-2xl max-w-2xl mx-auto mb-12 relative z-10">
-              Have an idea? Let’s turn it into a powerful digital product.
+          <div>
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">
+              About Us
+            </span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">We Build Products That Matter</h2>
+            <p className="mt-3 max-w-[580px] text-[16px] leading-[1.7] text-[#475569]">
+              Kapish Technologies is a full-service Indian digital product company helping startups, mid-size businesses, and enterprise teams build software with confidence. We combine strategy, design, development, and support to deliver measurable outcomes.
             </p>
-            <Link href="/contact" className="relative z-10 inline-flex justify-center items-center gap-3 bg-white text-black font-extrabold px-10 py-5 rounded-full hover:bg-slate-200 transition-all transform hover:-translate-y-1 text-lg shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.5)]">
-              Start Your Project <ArrowRight className="w-6 h-6" />
-            </Link>
-          </motion.div>
+            <div className="mt-6 space-y-4">
+              {[
+                ["Integrity First", "Values-led collaboration and transparent execution in every engagement."],
+                ["Speed Without Compromise", "Fast delivery with engineering rigor and production-ready quality."],
+                ["Long-term Partnership", "We stay aligned to your roadmap, from launch to scale."],
+              ].map(([title, description]) => (
+                <div key={title} className="flex gap-3">
+                  <span className="mt-0.5 grid h-8 w-8 place-items-center rounded-[10px] bg-[rgba(30,58,138,0.08)]">
+                    <CheckCircle2 size={16} className="text-[#1E3A8A]" />
+                  </span>
+                  <div>
+                    <h3 className="font-sora text-[15px] font-semibold text-[#0A2540]">{title}</h3>
+                    <p className="text-[13px] text-[#64748B]">{description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="section-pad bg-[#F1F5F9]">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Services</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">Services Built for Scale</h2>
+          </div>
+
+          <div className="services-grid grid grid-cols-4 gap-5">
+            {services.map((service) => (
+              <article key={service.title} className="kapish-card flex min-h-[224px] flex-col rounded-2xl border border-[#E2E8F0] bg-white px-[22px] py-[28px]">
+                <span className="mb-4 inline-flex h-[46px] w-[46px] items-center justify-center rounded-xl bg-[linear-gradient(135deg,#0A2540,#1E3A8A)] text-white">
+                  <service.icon size={20} />
+                </span>
+                <h3 className="font-sora text-[16px] font-semibold text-[#0A2540]">{service.title}</h3>
+                <p className="mt-2 text-[13px] leading-[1.7] text-[#475569]">{service.description}</p>
+                <Link href="/#contact" className="mt-auto pt-4 text-[13px] font-semibold text-[#E8761A]">
+                  Learn more →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-white">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Why Choose Us</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">Built for Confidence and Growth</h2>
+          </div>
+          <div className="why-grid grid grid-cols-3 gap-5">
+            {[
+              ["01", "Startup Speed", "We move fast without cutting corners."],
+              ["02", "Enterprise Trust", "Processes built for scale and compliance."],
+              ["03", "End-to-End", "Design to deploy, all under one roof."],
+              ["04", "Transparent Pricing", "No surprises, ever."],
+              ["05", "Indian Excellence", "World-class talent with honest cost."],
+              ["06", "Post-Launch Support", "We stay after the ship date."],
+            ].map(([num, title, desc]) => (
+              <article key={num} className="relative rounded-2xl border border-[#E2E8F0] bg-white px-[26px] py-[32px]">
+                <span className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-[linear-gradient(180deg,#1E3A8A,#0A2540)]" />
+                <p className="font-sora text-[36px] font-bold leading-none text-[#E2E8F0]">{num}</p>
+                <h3 className="font-sora mt-3 text-[16px] font-semibold text-[#0A2540]">{title}</h3>
+                <p className="mt-2 text-[13px] text-[#64748B]">{desc}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-[#F1F5F9]">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Our Process</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">How We Work</h2>
+          </div>
+          <div className="process-grid relative grid grid-cols-5 gap-6">
+            <div className="absolute left-[8%] right-[8%] top-7 hidden h-[2px] bg-[linear-gradient(90deg,#E2E8F0,#1E3A8A,#E2E8F0)] min-[769px]:block" />
+            {processSteps.map(([num, title, desc]) => {
+              const active = num === "3";
+              return (
+                <article key={num} className="relative text-center">
+                  <div
+                    className={`mx-auto mb-3 grid h-14 w-14 place-items-center rounded-full border-2 font-sora text-[16px] font-semibold ${
+                      active
+                        ? "border-[#E8761A] bg-[linear-gradient(135deg,#E8761A,#B85C20)] text-white"
+                        : "border-[#E2E8F0] bg-white text-[#94A3B8]"
+                    }`}
+                  >
+                    {num}
+                  </div>
+                  <h3 className="font-sora text-[13px] font-semibold text-[#0A2540]">{title}</h3>
+                  <p className="mt-1 text-[12px] text-[#94A3B8]">{desc}</p>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio" className="section-pad bg-white">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Case Studies</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">Portfolio Highlights</h2>
+          </div>
+
+          <div className="portfolio-grid grid grid-cols-3 gap-5">
+            {[
+              {
+                title: "FinEdge Dashboard",
+                description: "Fintech web app",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=300&fit=crop",
+                tags: ["React", "Node.js", "UI/UX"],
+              },
+              {
+                title: "ShopNova App",
+                description: "E-commerce mobile app",
+                image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=300&fit=crop",
+                tags: ["Flutter", "Firebase"],
+              },
+              {
+                title: "MediSync AI",
+                description: "Healthcare AI platform",
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=300&fit=crop",
+                tags: ["Python", "ML", "AWS"],
+              },
+            ].map((project) => (
+              <article key={project.title} className="portfolio-card overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white transition-all duration-200">
+                <img src={project.image} alt={project.title} className="h-[190px] w-full object-cover" />
+                <div className="p-4">
+                  <h3 className="font-sora text-[18px] font-semibold text-[#0A2540]">{project.title}</h3>
+                  <p className="text-[13px] text-[#64748B]">{project.description}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-[5px] bg-[#F1F5F9] px-2 py-1 text-[11px] text-[#475569]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-pad bg-[#F1F5F9]">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Testimonials</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">What Clients Say</h2>
+          </div>
+
+          <div className="testimonials-grid grid grid-cols-3 gap-5">
+            {[
+              ["KapishTech transformed our roadmap into a scalable product faster than expected.", "Rajesh M.", "CTO, FinEdge", "RM"],
+              ["From UX to deployment, the team felt like co-founders who deeply understood speed.", "Priya S.", "Founder, ShopNova", "PS"],
+              ["Excellent engineering discipline and strong support after launch.", "Arjun D.", "PM, MediSync", "AD"],
+            ].map(([text, name, role, initials]) => (
+              <article key={name} className="rounded-2xl border border-[#E2E8F0] bg-white p-5">
+                <p className="font-[Georgia,serif] text-[36px] leading-none text-[#E8761A]">&ldquo;</p>
+                <p className="mt-2 text-[14px] italic leading-[1.7] text-[#475569]">{text}</p>
+                <p className="mt-3 text-[13px] text-[#E8761A]">★★★★★</p>
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0A2540] font-sora text-xs text-white">{initials}</span>
+                  <div>
+                    <p className="font-semibold text-[#0F172A]">{name}</p>
+                    <p className="text-[12px] text-[#64748B]">{role}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="team" className="section-pad bg-white">
+        <div className="site-shell">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <span className="inline-flex rounded-full bg-[rgba(30,58,138,0.08)] px-3 py-1 text-[12px] font-bold uppercase tracking-[0.6px] text-[#1E3A8A]">Team</span>
+            <h2 className="font-sora mt-4 text-[34px] font-bold text-[#0F172A] max-md:text-[30px]">Founding Leadership</h2>
+          </div>
+
+          <div className="team-grid mx-auto grid max-w-[700px] grid-cols-2 gap-5">
+            {[
+              {
+                name: "Kapish",
+                role: "Founder & CEO",
+                bio: "Visionary builder with a passion for tech and people.",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&face",
+                ring: "bg-[linear-gradient(135deg,#0A2540,#1E3A8A)]",
+              },
+              {
+                name: "[Second Co-founder]",
+                role: "CTO",
+                bio: "Full-stack architect who ships fast and thinks long-term.",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&face",
+                ring: "bg-[linear-gradient(135deg,#0A2540,#1E3A8A)]",
+              },
+            ].map((member) => (
+              <article key={member.name} className="mx-auto w-full max-w-[320px] rounded-2xl border border-[#E2E8F0] bg-white p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_24px_rgba(10,37,64,0.1)]">
+                <div className={`mx-auto mb-4 grid h-[88px] w-[88px] place-items-center rounded-full p-[3px] ${member.ring}`}>
+                  <img src={member.image} alt={member.name} className="h-full w-full rounded-full object-cover" />
+                </div>
+                <h3 className="font-sora text-[18px] font-semibold text-[#0A2540]">{member.name}</h3>
+                <p className="text-[13px] font-semibold text-[#1E3A8A]">{member.role}</p>
+                <p className="mt-2 text-[13px] text-[#64748B]">{member.bio}</p>
+                <div className="mt-4 flex justify-center gap-2">
+                  {["Li", "Tw", "Gh"].map((item) => (
+                    <button key={item} type="button" className="grid h-[34px] w-[34px] place-items-center rounded-[8px] border border-[#E2E8F0] text-xs text-[#475569] transition-all duration-200 hover:bg-[#0A2540] hover:text-white">
+                      {item}
+                    </button>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="section-pad bg-[linear-gradient(135deg,#0A2540,#1E3A8A)] text-white">
+        <div className="site-shell text-center">
+          <h2 className="font-sora text-[38px] font-bold tracking-[-0.3px] text-white max-md:text-[30px]">Ready to Build Something Great?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-[16px] text-white/75">Tell us about your project. We will get back within 24 hours.</p>
+
+          <form className="mx-auto mt-6 flex max-w-[760px] flex-wrap justify-center gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="min-w-[260px] flex-1 rounded-xl border-[1.5px] border-[rgba(255,255,255,0.2)] bg-[rgba(255,255,255,0.08)] px-4 py-3 text-sm text-white placeholder:text-[rgba(255,255,255,0.4)] outline-none transition-colors duration-200 focus:border-[#E2E8F0]"
+            />
+            <button type="submit" className="rounded-[8px] bg-[#E8761A] px-5 py-3 font-sora text-sm font-semibold text-white transition-colors duration-200 hover:bg-[#D4621A]">
+              Send Message
+            </button>
+          </form>
+
+          <div className="mt-5 flex flex-wrap justify-center gap-2">
+            {[
+              "Email: hello@kapishtech.com",
+              "Phone: +91 98765 43210",
+              "Location: India",
+            ].map((item) => (
+              <span key={item} className="rounded-full border border-[rgba(255,255,255,0.15)] px-3 py-1 text-xs text-white/60">
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
     </div>

@@ -1,14 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans, Sora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"], display: "swap" });
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-dm-sans",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sora",
+});
 
 export const metadata: Metadata = {
-  title: "Kapish Technologies — Building Digital Products That Drive Growth",
-  description: "Kapish Technologies is a modern tech startup building high-performance websites, apps, and digital experiences.",
+  title: "Kapish Technologies | Built on Values. Powered by Technology",
+  description:
+    "Kapish Technologies is a full-service Indian digital product company for startups, growing businesses, and enterprises.",
 };
 
 export default function RootLayout({
@@ -17,12 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-indigo-500/30 overflow-x-hidden`}
+        className={`${dmSans.className} ${dmSans.variable} ${sora.variable} min-h-screen flex flex-col antialiased overflow-x-hidden`}
       >
         <Navbar />
-        <main className="flex-grow pt-[88px]">{children}</main>
+        <main className="flex-grow pt-16">{children}</main>
         <Footer />
       </body>
     </html>
